@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="home-page">
+    <div class="home-card">
+        <h1>Realtime Chat</h1>
+        <p>Connect instantly with your team</p>
+
+        <form method="post">
+            <input type="text" name="name" placeholder="Enter your username" required value="{{ name }}">
+            <input type="text" name="code" placeholder="Enter room code" value="{{ code }}">
+
+            <div class="btn-group">
+                <button type="submit" name="join">Join Room</button>
+                <button type="submit" name="create">Create Room</button>
+            </div>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock %}
